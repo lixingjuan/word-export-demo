@@ -1,0 +1,141 @@
+@import "~antd/dist/antd.css";
+
+@media screen and (max-width: 3840px) {
+    html,body {
+        font-size: 32px;
+    }
+}
+@media screen and (max-width: 1920px) {
+    html,body {
+        font-size: 14px;
+    }
+}
+body{
+    /*background-color: #071324!important;*/
+    overflow: scroll;
+}
+.ant-row {
+    margin-bottom: 1rem;
+    /*margin-left: 0.75rem!important;*/
+    /*margin-right: 0.75rem!important*/
+}
+
+.Plugging .ant-row {
+    margin-left: -0.75rem !important;
+    margin-right: -0.75rem !important
+}
+
+/*.monthResults .ant-row{*/
+/*margin-left: 0.55rem!important;*/
+/*margin-right: 0.55rem!important*/
+/*}*/
+.colChildren {
+    background: rgba(42, 219, 249, .05);
+    color: rgb(155, 155, 155);
+    height: 26.25rem;
+}
+
+.colTitle {
+    /* border-bottom: 0.0625rem solid #3e3e3e; */
+    /*padding: 1rem;*/
+    /*height: 3rem;*/
+    color: #2adbf9;
+    font-size: 1rem;
+    padding: 1rem;
+    /*line-height: 1;*/
+}
+
+.colTitle::before {
+    content: "";
+    display: inline-block;
+    width: .8rem;
+    height: .8rem;
+    background: url(asset/tt.png) center center no-repeat;
+    background-size: 100% 100%;
+    vertical-align: -.05rem;
+    margin-right: 10px
+}
+
+.slick-slide {
+    text-align: center;
+    line-height: 1.875rem;
+    /* background: rgb(51,51,51); */
+    overflow: hidden;
+}
+
+.TUI-Crud {
+    background: #fff;
+    padding: 24px;
+}
+
+.TUI-Filter .TUI-Form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.TUI-Filter .TUI-Filter-Controller {
+    width: 145px !important;
+    margin-left: 12px !important;
+}
+
+.TUI-row {
+    display: flex !important;
+}
+
+.TUI-form-item-label {
+    width: 20%;
+}
+
+.TUI-form-item-control-wrapper {
+    width: 100%;
+}
+
+.TUI-table-tbody > tr > td {
+    white-space: nowrap;
+}
+
+.TUI-table-thead > tr > th {
+    white-space: nowrap;
+}
+
+.TUI-table-wrapper {
+    margin-top: 16px;
+}
+
+.TUI-table-wrapper {
+    min-height: 650px;
+}
+
+.ant-radio-button-wrapper-checked {
+    background: rgba(24, 156, 255, .8) !important;
+    color: #fff !important;
+}
+
+.ant-radio-button-wrapper {
+    color: #999;
+    background: #333;
+    font-size: 0.875rem;
+    /* border: 0.0625rem solid #666 !important; */
+    border: 0 none;
+}
+
+.ant-radio-button-wrapper:not(:first-child)::before {
+    /* background: #666 !important; */
+    background: transparent;
+}
+
+.ant-carousel .slick-dots li button {
+    width: 0.25rem !important;
+    margin-left: 0.375rem;
+    background: #999 !important;
+}
+
+.ant-carousel .slick-dots li.slick-active button {
+    background: #2ADBF9 !important
+}
+
+.ant-radio-button-wrapper:first-child {
+    border: 0 none !important;
+}
+
