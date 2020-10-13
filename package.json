@@ -4,8 +4,10 @@
   "private": true,
   "dependencies": {
     "antd": "^3.16.2",
+    "axios": "^0.20.0",
     "echarts": "^4.2.1",
     "file-saver": "^2.0.2",
+    "koa": "^2.13.0",
     "moment": "^2.24.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
