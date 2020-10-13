@@ -4196,6 +4196,11 @@ export default function Reportmag(props) {
   const { type, deptLevel } = params;
   const [data, setData] = useState(null);
   const [state, setState] = useState({});
+
+  const [hiddenHtml, setHiddenHtml] = useState(
+    "<!DOCTYPE html><html><head></head><body>Hi there!</body></html>"
+  );
+
   const crud = useCrudController({
     service: service,
   });
@@ -4229,6 +4234,16 @@ export default function Reportmag(props) {
   useEffect(() => {
     getReportDetail(deptLevel, reportId);
   }, []);
+
+  function createMarkup() {
+    return { __html: hiddenHtml };
+  }
+
+  async function demo() {
+    const res = await axios.get("http://localhost:4000/");
+    setHiddenHtml(res.data);
+  }
+
   // 不同报表类型，加载不同的模板
   const showContentWithTpl = (data, extraProps) => {
     let Tpl;
@@ -4243,20 +4258,20 @@ export default function Reportmag(props) {
     const res = await axios.get("http://localhost:4000/");
     console.log();
     const document1 = parse5.parse("<!DOCTYPE html>" + res.data);
-    const document = parse5.parse(
+    const document2 = parse5.parse(
       "<!DOCTYPE html><html><head></head><body>Hi there!</body></html>"
     );
 
-    // Serializes a document.
     const html1 = parse5.serialize(document1);
-    const html = parse5.serialize(document);
+    const html2 = parse5.serialize(document2);
 
     console.log(html1);
-    console.log(html);
+    console.log(html2);
 
     const { common } = data;
     let styles = require("./reportExportStyle").default;
     let contentObj = document.getElementById("content");
+    console.log(contentObj);
     debugger;
     let WordSection2Obj = document.getElementsByClassName("WordSection2")[0];
     if (WordSection2Obj) {
@@ -4308,6 +4323,9 @@ export default function Reportmag(props) {
           </Button>
         )}
       </div>
+      <button onClick={demo}>点击</button>
+      <div className="hidden" dangerouslySetInnerHTML={createMarkup()} />
+
       <PageLayout title={type ? "编辑报告" : "报告详情"}>
         <div
           id="content"
