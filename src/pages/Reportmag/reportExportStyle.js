@@ -1,5 +1,4 @@
-
-const styles=`
+const styles = `
     @page WordSection1{
         size:595.3pt 841.9pt;
         margin:72.0pt 90.0pt 72.0pt 90.0pt;
@@ -37,7 +36,7 @@ const styles=`
         font-family:"Times New Roman",serif;
         mso-fareast-font-family:宋体;
         mso-font-kerning:1.0pt;}
-        
+
     table.MsoNormalTable{
         mso-style-name:普通表格;
         mso-tstyle-rowband-size:0;
@@ -115,7 +114,7 @@ const styles=`
         mso-bidi-font-size:12.0pt;
         mso-fareast-font-family:'宋体';
         mso-font-kerning:1.0pt;
-        font-size:16.0pt; font-family:仿宋_GB2312; 
+        font-size:16.0pt; font-family:仿宋_GB2312;
     }
 .userInputCenter pre{
      mso-char-indent-count:2.0;
@@ -131,9 +130,9 @@ const styles=`
      mso-bidi-font-size:12.0pt;
      mso-fareast-font-family:'仿宋';
      mso-font-kerning:1.0pt;
-     font-size:14.0pt; font-family:'仿宋'; 
+     font-size:14.0pt; font-family:'仿宋';
  }
-.userInputStation pre{ 
+.userInputStation pre{
     mso-char-indent-count:2.0;
     line-height:22.0pt;mso-line-height-rule:exactly;
     mso-style-unhide:no;
@@ -147,7 +146,7 @@ const styles=`
     mso-bidi-font-size:12.0pt;
     mso-fareast-font-family:'宋体';
     mso-font-kerning:1.0pt;
-    font-size:12.0pt; font-family:宋体; 
+    font-size:12.0pt; font-family:宋体;
 }
-   `
-export default styles
+   `;
+export default styles;

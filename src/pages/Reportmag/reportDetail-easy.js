@@ -31,19 +31,9 @@ export default function Reportmag(props) {
   useEffect(() => {
     const demo = async () => {
       const res = await axios.get("http://localhost:4000/");
-      const htmlData = res.data;
-      const reg = /<style([\\s\\S]*)style>/;
-
-      // const htmlDataParse = parse5.parse(htmlData);
-      // const htmlDataparseFragment = parse5.parseFragment(htmlData);
-      // const htmlDataserialize = parse5.serialize(htmlData);
-      // console.log(htmlDataParse);
-      // console.log(htmlDataparseFragment);
-      // console.log(htmlDataserialize);
-
       setHiddenHtml(res.data);
     };
-    // demo();
+    demo();
     const dataValue = {
       common: {
         reportMonth: "2019-09",
@@ -62,11 +52,8 @@ export default function Reportmag(props) {
   const handleReportExport = async (idText) => {
     const { common } = data;
     let styles = require("./reportExportStyle").default;
-    let hiddenObj = document.getElementById("hidden");
     let contentObj = document.getElementById("content");
-    console.log(hiddenObj);
     console.log(contentObj);
-
     let WordSection2Obj = document.getElementsByClassName("WordSection2")[0];
     if (WordSection2Obj) {
       contentObj.insertBefore(createScanObj(), WordSection2Obj);
@@ -127,10 +114,9 @@ export default function Reportmag(props) {
         <button type="primary" onClick={() => handleReportExport("content")}>
           导出demo报告
         </button>
-        {/* <button type="primary" onClick={() => handleReportExport("hidden")}>
+        <button type="primary" onClick={() => handleReportExport("hidden")}>
           导出测试报告
-        </button> */}
-        {/* <div>demo</div> */}
+        </button>
       </div>
     </>
   );

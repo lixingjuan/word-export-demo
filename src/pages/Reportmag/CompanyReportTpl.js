@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { Textarea } from "tengitsui/dist";
 import "./reportTpl.css";
 import moment from "moment/moment";
+import { Table } from "antd";
 
 const tdFirstStyle = {
   borderTop: "double black 1.5pt",
   padding: "5px 1px",
   whiteSpace: "nowrap",
 };
+
 const tdLastStyle = { ...tdFirstStyle, borderRight: "none" };
-const tdNowrap = { whiteSpace: "nowrap", padding: "5px 1px" };
 
 export default function CompanyReportTpl(props) {
   console.log({ props });
@@ -20,20 +20,7 @@ export default function CompanyReportTpl(props) {
 
   const { note = "", suggestion = "" } = state;
 
-  const {
-    common,
-    earnInformation,
-    incomeInformation,
-    beforeEarnInformation,
-    inspectionInformation,
-    laneFlowInformation,
-    freeCarInformation,
-    publicityInformation,
-    hotlineInformation,
-    billInformation,
-    maintainInformation,
-    checkInformation,
-  } = data;
+  const { common, earnInformation } = data;
 
   return (
     <>
@@ -49,19 +36,7 @@ export default function CompanyReportTpl(props) {
         <p className="MsoNormal" style={{ textAlign: "center" }}>
           <br />
         </p>
-        <p className="MsoNormal" style={{ textAlign: "center" }}>
-          <br />
-        </p>
-        <p
-          className="MsoNormal"
-          style={{ textAlign: "center", margin: "10px 0", lineHeight: "30pt" }}
-        >
-          <span className="aa">
-            第{moment(common.reportMonth).format("M")}期
-          </span>
-          <br />
-          <span className="aa">（总第{common.totalIssue}期）</span>
-        </p>
+
         <p
           className="MsoNormal"
           style={{
@@ -77,18 +52,29 @@ export default function CompanyReportTpl(props) {
           &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
           {moment(common.updateTime).format("YYYY年M月D日")}
         </p>
-        <p className="MsoNormal" style={{ textAlign: "center" }}>
-          <br />
-        </p>
-        <p className="MsoNormal" style={{ textAlign: "center" }}>
-          <br />
-        </p>
-        <p className="MsoNormal" style={{ textAlign: "center" }}>
-          <b className="monthTitle">
-            {moment(common.reportMonth).format("YYYY年M月")}
-            XX公司收费运营调度管理报告
-          </b>
-        </p>
+
+        <table
+          border="1"
+          cellPadding="0"
+          cellSpacing="0"
+          style={{ border: "green 1px solid" }}
+        >
+          <tbody>
+            <tr>
+              <th>Month</th>
+              <th>Savings</th>
+            </tr>
+            <tr>
+              <td>January</td>
+              <td>$100</td>
+            </tr>
+            <tr>
+              <td>February</td>
+              <td>$80</td>
+            </tr>
+          </tbody>
+        </table>
+
         <p className="MsoNormal" style={{ textAlign: "center" }}>
           <br />
         </p>
